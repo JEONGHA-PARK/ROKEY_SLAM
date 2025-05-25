@@ -48,7 +48,22 @@ The packages provided by TurtleBot4 were used. The map was created using SLAM To
 ### object_detection_tf.py
 The node created from this file subscribes to RGB and depth images from the TurtleBot4, performs object detection to determine whether a vehicle is illegally parked, estimates the distance to the object using the depth image, transforms the detected position to the map frame via TF, and publishes it as a topic. All these processes run through multithreading.
 
-#### patrol.py
+![0525forgithub](https://github.com/user-attachments/assets/a3cc4270-ea6d-4e2d-98a9-6c9493d94aa0)
 
-#### towing.py
-## 정도...
+### patrol.py
+
+This code utilizes the TurtleBot4 Navigation Toolbox to enable the robot to autonomously patrol a designated area. Waypoints were set to guide the robot’s patrol route automatically.
+
+![patrol_forgit](https://github.com/user-attachments/assets/129a9228-c6ef-4bd6-b66a-45bdec08ec52)
+
+### towing.py
+
+This code is designed to receive map coordinate data of illegally parked vehicles from the patrol robot, navigate to that location, and capture a photo. The saved image file name includes the date and location information. After taking the photo, the robot is programmed to return to a specific location. However, due to the limitations of the TurtleBot4, the towing function could not be implemented.
+
+<img src = "https://github.com/user-attachments/assets/d3529825-ff8a-417a-97ba-183367d82ac3" width="30%" height="30%">
+<img src = "https://github.com/user-attachments/assets/b2a3404a-2f3c-4f7b-ac27-7420a54c3df7" width="31%" height="31%">
+
+## Others
+The configs folder contains the configuration file used for running the navigation. This configuration reduces the inflation radius to ensure smooth navigation even in narrow map environments. Additionally, the movement speed of the TurtleBot4 was lowered to adjust the camera update rate, improving the real-time performance of object detection.
+
+The maps folder contains the map file generated through SLAM, and the model folder contains the .pt file of the YOLOv11n model that was fine-tuned through transfer learning.
