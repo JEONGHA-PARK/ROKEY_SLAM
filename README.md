@@ -4,6 +4,8 @@ This project was conducted as part of the ROKEY Bootcamp 3rd cohort's SLAM proje
 A system was developed using Python-based ROS2 for communication between two TurtleBots.
 This robot system consists of a patrol robot that detects illegally parked vehicles and a towing robot that navigates to the detected vehicle’s location and performs towing.
 
+[📹Video link](https://youtu.be/kDVmqTWpEo4?si=YXWweSR9qxDkXr2W)(The towing scene in the latter part of the video is a staged demonstration.)
+
 ## Turtlebot4 Camera Setting
 Camera model : OAK-D-Lite
 
