@@ -25,12 +25,30 @@ In this project, a YOLOv11n model was fine-tuned to create an object detection m
 The region of interest was masked by designating specific color areas, and the overlap between the detected bounding box of the object and the masked area was calculated to determine whether the vehicle was illegally parked.
 #### Green color type masking
 ![image](https://github.com/user-attachments/assets/6f838a9b-6560-484b-829f-598bc4f3693e)
-|테스트1|*강조1*|테스트3|
-|테스트1|**강조2**|테스트3|
-<|테스트1|<span style="color:red">강조3</span>|테스트3|>
+||Color|
+|---|---|
+|Illegal|🔴Red|
+|Legal|⚪️White|
 <img src = "https://github.com/user-attachments/assets/ae8834a0-d8d1-49ee-9c26-409dc18db849" width="50%" height="50%">
 
 ## SLAM & Navigation
 The packages provided by TurtleBot4 were used. The map was created using SLAM Toolbox, and the TurtleBot4 was navigated to the target location via the optimal path using the Navigation Toolbox.
-## 코드 세개 설명
+
+[:octocat:turtlebot4 github link](https://github.com/turtlebot/turtlebot4/tree/jazzy?tab=readme-ov-file)
+#### MAP
+<img src = "https://github.com/user-attachments/assets/52b3ec07-4179-41e6-98ff-63bb23e0e8d2" width="30%" height="30%">
+
+
+#### Navigation2
+![Image](https://github.com/user-attachments/assets/6c421057-920b-4d70-8aa7-fa7ad474eab5)
+
+
+## Code Explanation
+
+### object_detection_tf.py
+The node created from this file subscribes to RGB and depth images from the TurtleBot4, performs object detection to determine whether a vehicle is illegally parked, estimates the distance to the object using the depth image, transforms the detected position to the map frame via TF, and publishes it as a topic. All these processes run through multithreading.
+
+#### patrol.py
+
+#### towing.py
 ## 정도...
